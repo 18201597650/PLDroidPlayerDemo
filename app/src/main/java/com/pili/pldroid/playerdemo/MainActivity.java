@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
@@ -17,17 +18,6 @@ import java.net.UnknownHostException;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final String DEFAULT_TEST_URL = "rtmp://live.hkstv.hk.lxdns.com/live/hks";
-
-    private static final String[] DEFAULT_PLAYBACK_DOMAIN_ARRAY = {
-            "live.hkstv.hk.lxdns.com"
-    };
-
-    private Spinner mActivitySpinner;
-    private EditText mEditText;
-    private RadioGroup mStreamingTypeRadioGroup;
-    private RadioGroup mDecodeTypeRadioGroup;
-
     public static final String[] TEST_ACTIVITY_ARRAY = {
             "PLMediaPlayerActivity",
             "PLAudioPlayerActivity",
@@ -35,6 +25,14 @@ public class MainActivity extends AppCompatActivity {
             "PLVideoTextureActivity",
             "VideoViewActivity"
     };
+    private static final String DEFAULT_TEST_URL = "rtmp://live.hkstv.hk.lxdns.com/live/hks";
+    private static final String[] DEFAULT_PLAYBACK_DOMAIN_ARRAY = {
+            "live.hkstv.hk.lxdns.com"
+    };
+    private Spinner mActivitySpinner;
+    private EditText mEditText;
+    private RadioGroup mStreamingTypeRadioGroup;
+    private RadioGroup mDecodeTypeRadioGroup;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -110,6 +108,7 @@ public class MainActivity extends AppCompatActivity {
             intent.putExtra("liveStreaming", 0);
         }
         startActivity(intent);
+        Log.i("MainActivity", "不同");
     }
 
     @Override
