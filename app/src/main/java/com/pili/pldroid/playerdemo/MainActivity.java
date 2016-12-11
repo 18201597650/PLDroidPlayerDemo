@@ -63,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        Log.i("MainActivity","onDestroy");
         PLNetworkManager.getInstance().stopDnsCacheService(this);
     }
 
